@@ -10,15 +10,45 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script>
-  $(function() {
-$( "#BirthDate" ).datepicker({ dateFormat: 'dd/mm/yy' })
-                    .get(0).setAttribute("type", "text");
-  });
+      $(function () {
+          $("#BirthDate").datepicker({ dateFormat: 'dd/mm/yy' })
+                              .get(0).setAttribute("type", "text");
+      });
+      $.datepicker.regional['ru'] = {
+          closeText: 'Закрыть',
+          prevText: 'Пред',
+          nextText: 'След',
+          currentText: 'Сегодня',
+          monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+          'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+          monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+          'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+          dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+          dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+          dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+          weekHeader: 'Не',
+          dateFormat: 'dd.mm.yy',
+          firstDay: 1,
+          isRTL: false,
+          showMonthAfterYear: false,
+          yearSuffix: ''
+      };
+      $.datepicker.setDefaults($.datepicker.regional['ru']);
   </script>
+
+  <script type="text/javascript">
+      $(function () {
+          $("[data-autocomplete-source]").each(function () {
+              var target = $(this);
+              target.autocomplete({ source: target.attr("data-autocomplete-source") });
+          });
+      });
+    </script>
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -44,8 +74,10 @@ $( "#BirthDate" ).datepicker({ dateFormat: 'dd/mm/yy' })
         <div class="editor-label">
             @Html.LabelFor(model => model.State)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.State)
+        <div class="editor-field">  
+            
+             @Html.TextBoxFor(model => model.State, new { data_autocomplete_source = Url.Action("AutocompleteSearch"), @class = "ui-autocomplete-input" })
+
             @Html.ValidationMessageFor(model => model.State)
         </div>
 

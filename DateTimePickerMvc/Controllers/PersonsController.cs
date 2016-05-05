@@ -33,5 +33,16 @@ namespace DateTimePickerMvc.Controllers
             }
             return View(person);
         }
+
+        public ActionResult AutocompleteSearch(string term)
+        {
+            var allCountries = new List<string>() { "Украина", "Беларусь", "Латвия", "Литва" };
+
+            var models = allCountries.Where(a =>a.Contains(term))
+                   .Select(a => new { value = a })
+                   .Distinct();
+
+            return Json(models, JsonRequestBehavior.AllowGet);
+        }
     }
 }
