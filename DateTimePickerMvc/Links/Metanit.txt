@@ -1,0 +1,22 @@
+﻿Использование Datepicker jQuery в MVC
+http://metanit.com/sharp/articles/mvc/2.php
+
+Основы валидации
+http://metanit.com/sharp/mvc5/7.2.php
+
+JqGrid в ASP.NET MVC
+http://metanit.com/sharp/mvc5/17.3.php
+----
+
+Bootstrap в ASP.NET MVC 5
+http://metanit.com/sharp/mvc5/14.1.php
+
+Миграция баз данных
+http://metanit.com/sharp/mvc5/5.12.php
+
+Бандлы и минификация
+http://metanit.com/sharp/mvc/15.1.php
+http://metanit.com/sharp/mvc5/13.1.php
+
+Создание бандлов. Библиотеки из CDN
+http://metanit.com/sharp/mvc/15.2.php

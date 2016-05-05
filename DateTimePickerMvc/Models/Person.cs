@@ -10,6 +10,7 @@ namespace DateTimePickerMvc.Models
     {
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Имя")]
         public string Name { get; set; }
 
