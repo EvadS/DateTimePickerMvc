@@ -118,6 +118,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605051216175_InitialCreate.cs" />
+    <Compile Include="Migrations\201605051216175_InitialCreate.Designer.cs">
+      <DependentUpon>201605051216175_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061741355_MigrateDB.cs" />
+    <Compile Include="Migrations\201605061741355_MigrateDB.Designer.cs">
+      <DependentUpon>201605061741355_MigrateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,7 +175,9 @@
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -192,6 +203,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Persons\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605051216175_InitialCreate.resx">
+      <DependentUpon>201605051216175_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061741355_MigrateDB.resx">
+      <DependentUpon>201605061741355_MigrateDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

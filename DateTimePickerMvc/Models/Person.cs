@@ -13,6 +13,10 @@ namespace DateTimePickerMvc.Models
         [Required]
         [Display(Name = "Имя")]
         public string Name { get; set; }
+       
+        [Required]
+        [Display(Name = "Фамилия")]
+        public string FName { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
