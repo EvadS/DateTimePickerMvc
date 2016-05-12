@@ -39,6 +39,7 @@
       $.datepicker.setDefaults($.datepicker.regional['ru']);
   </script>
 
+
   <script type="text/javascript">
       $(function () {
           $("[data-autocomplete-source]").each(function () {
@@ -46,6 +47,31 @@
               target.autocomplete({ source: target.attr("data-autocomplete-source") });
           });
       });
+    </script>
+
+<script  type="text/javascript">
+    $(document).ready(function () {
+        try {           
+                $("#FName").attr("autocomplete", "off");            
+        }
+        catch (e)
+        { }
+    });
+
+    </script>
+
+@*убрать автозаполнение полей типа дата *@
+<script  type="text/javascript">
+    $(document).ready(function () {
+        try {
+            $("input[type='date']").each(function () {
+                $(this).attr("autocomplete", "off");
+            });
+        }
+        catch (e)
+        { }
+    });
+
     </script>
 
 <h2>Create</h2>
@@ -62,7 +88,7 @@
             @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
+            @Html.EditorFor(model => model.Name,new { autocomplete="off"})
             @Html.ValidationMessageFor(model => model.Name)
         </div>
 
