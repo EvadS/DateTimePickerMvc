@@ -126,6 +126,10 @@
     <Compile Include="Migrations\201605061741355_MigrateDB.Designer.cs">
       <DependentUpon>201605061741355_MigrateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605121140096_AddPassAndPasswConfField.cs" />
+    <Compile Include="Migrations\201605121140096_AddPassAndPasswConfField.Designer.cs">
+      <DependentUpon>201605121140096_AddPassAndPasswConfField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonContext.cs" />
@@ -217,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605061741355_MigrateDB.resx">
       <DependentUpon>201605061741355_MigrateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121140096_AddPassAndPasswConfField.resx">
+      <DependentUpon>201605121140096_AddPassAndPasswConfField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

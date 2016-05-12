@@ -11,10 +11,10 @@ namespace DateTimePickerMvc.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage="Поле обязательно для заполнения")]
-        [Display(Name = "Имя",Prompt="Имя пользователя")]
-        public string Name { get; set; }          
-    
+        [Required(ErrorMessage = "Поле обязательно для заполнения")]
+        [Display(Name = "Имя", Prompt = "Имя пользователя")]
+        public string Name { get; set; }
+
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Фамилия")]
         public string FName { get; set; }
@@ -24,10 +24,21 @@ namespace DateTimePickerMvc.Models
         [Display(Name = "Дата рождения")]
         public DateTime BirthDate { get; set; }
 
-        [Display(Name = "Страна")]         
+        [Display(Name = "Страна")]
 
-        [Remote("CheckCountry", "Persons",ErrorMessage = "Не допустимое значение для поля 'Страна'")]
-       
+        [Remote("CheckCountry", "Persons", ErrorMessage = "Не допустимое значение для поля 'Страна'")]
+
         public string State { get; set; }
+
+
+        [Display(Name = "Пароль")]
+        [DataType(DataType.Password)]
+        public virtual string Password { get; set; }
+
+        [Display(Name = "Подтверждение пароля")]
+        [System.Web.Mvc.Compare("Password", ErrorMessage = "Пароли не совпадают")]
+        [DataType(DataType.Password)]
+        public virtual string PasswordConfirm { get; set; }
+
     }
 }
