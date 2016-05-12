@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace DateTimePickerMvc.Models
 {
@@ -10,11 +11,11 @@ namespace DateTimePickerMvc.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [Display(Name = "Имя")]
-        public string Name { get; set; }
-       
-        [Required]
+        [Required(ErrorMessage="Поле обязательно для заполнения")]
+        [Display(Name = "Имя",Prompt="Имя пользователя")]
+        public string Name { get; set; }          
+    
+        [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Фамилия")]
         public string FName { get; set; }
 
@@ -23,7 +24,10 @@ namespace DateTimePickerMvc.Models
         [Display(Name = "Дата рождения")]
         public DateTime BirthDate { get; set; }
 
-        [Display(Name = "Страна")]
+        [Display(Name = "Страна")]         
+
+        [Remote("CheckCountry", "Persons",ErrorMessage = "Не допустимое значение для поля 'Страна'")]
+       
         public string State { get; set; }
     }
 }
