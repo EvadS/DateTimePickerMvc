@@ -32,6 +32,11 @@ namespace DateTimePickerMvc.Controllers
                 return RedirectToAction("Index");
             }
 
+            else if (person.Name.Length <= 2)
+            {
+                ModelState.AddModelError("State", "Недопустимая длина строки для поля 'Имя'");
+            }
+
           
             return View(person);
         }
