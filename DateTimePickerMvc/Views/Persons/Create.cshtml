@@ -77,18 +77,18 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
 @section Scripts{
-   @*  @System.Web.Optimization.Scripts.Render("~/bundles/jquery")*@
+ 
      @System.Web.Optimization.Scripts.Render("/bundles/jqueryui")
      @System.Web.Optimization.Scripts.Render("~/jquery.validate")
 
      @System.Web.Optimization.Scripts.Render("~/Scripts/DateTimePicker/dateTimePicker.js")
      @System.Web.Optimization.Scripts.Render("~/Scripts/Autocomplete/DataAutocomplete.js")
-
 }
 
-
-   @System.Web.Optimization.Styles.Render("~/Content/themes/smoothness/css")
+     @System.Web.Optimization.Styles.Render("~/Content/themes/smoothness/css")
 
 @section Footer {
     <hr/>
