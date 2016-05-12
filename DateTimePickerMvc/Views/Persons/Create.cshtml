@@ -4,75 +4,6 @@
     ViewBag.Title = "Create";
 }
 
- <link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
-
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-<script src="~/Scripts/jquery.validate.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-
-  <script>
-      $(function () {
-          $("#BirthDate").datepicker({ dateFormat: 'dd/mm/yy' })
-                              .get(0).setAttribute("type", "text");
-      });
-      $.datepicker.regional['ru'] = {
-          closeText: 'Закрыть',
-          prevText: 'Пред',
-          nextText: 'След',
-          currentText: 'Сегодня',
-          monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-          'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-          monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
-          'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-          dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
-          dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-          dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-          weekHeader: 'Не',
-          dateFormat: 'dd.mm.yy',
-          firstDay: 1,
-          isRTL: false,
-          showMonthAfterYear: false,
-          yearSuffix: ''
-      };
-      $.datepicker.setDefaults($.datepicker.regional['ru']);
-  </script>
-
-
-  <script type="text/javascript">
-      $(function () {
-          $("[data-autocomplete-source]").each(function () {
-              var target = $(this);
-              target.autocomplete({ source: target.attr("data-autocomplete-source") });
-          });
-      });
-    </script>
-
-<script  type="text/javascript">
-    $(document).ready(function () {
-        try {           
-                $("#FName").attr("autocomplete", "off");            
-        }
-        catch (e)
-        { }
-    });
-
-    </script>
-
-@*убрать автозаполнение полей типа дата *@
-<script  type="text/javascript">
-    $(document).ready(function () {
-        try {
-            $("input[type='date']").each(function () {
-                $(this).attr("autocomplete", "off");
-            });
-        }
-        catch (e)
-        { }
-    });
-
-    </script>
 
 <h2>Create</h2>
 
@@ -88,7 +19,7 @@
             @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name,new { autocomplete="off"})
+            @Html.EditorFor(model => model.Name, new { autocomplete = "off" })
             @Html.ValidationMessageFor(model => model.Name)
         </div>
 
@@ -146,8 +77,23 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section Scripts{
+     @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+     @System.Web.Optimization.Scripts.Render("/bundles/jqueryui")
+     @System.Web.Optimization.Scripts.Render("~/jquery.validate")
+
+     @System.Web.Optimization.Scripts.Render("~/Scripts/DateTimePicker/dateTimePicker.js")
+     @System.Web.Optimization.Scripts.Render("~/Scripts/Autocomplete/DataAutocomplete.js")
+
+}
+
+
+   @System.Web.Optimization.Styles.Render("~/Content/themes/smoothness/css")
 
 @section Footer {
     <hr/>
     Все права защищены. Evad. Corp. 2015.
 }
+
+
+

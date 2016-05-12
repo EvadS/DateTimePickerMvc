@@ -20,3 +20,31 @@ http://metanit.com/sharp/mvc5/13.1.php
 
 Создание бандлов. Библиотеки из CDN
 http://metanit.com/sharp/mvc/15.2.php
+
+
+/*
+<script  type="text/javascript">
+    $(document).ready(function () {
+        try {
+            $("#FName").attr("autocomplete", "off");
+        }
+        catch (e)
+        { }
+    });
+
+    </script>
+
+@*убрать автозаполнение полей типа дата *@
+<script  type="text/javascript">
+    $(document).ready(function () {
+        try {
+            $("input[type='date']").each(function () {
+                $(this).attr("autocomplete", "off");
+            });
+        }
+        catch (e)
+        { }
+    });
+
+
+*/
